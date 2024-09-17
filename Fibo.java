@@ -1,20 +1,16 @@
-package com.roshni;
-
-import java.util.Scanner;
+package com.roshni.Recursion;
 
 public class Fibo {
     public static void main(String[] args) {
-        Scanner sc= new Scanner(System.in);
-        int n= sc.nextInt();
-        int p=0;
-        int i=1;
-        int count= 2;
-        while(count<=n){
-            int temp=i;
-            i=i+p;
-            p=temp;
-            count++;
+        System.out.println(fiboFormula(50));
+    }
+    static int fiboFormula(int n){
+       return (int)(Math.pow(((1+ Math.sqrt(5))/2),n)/ Math.sqrt(5));
+    }
+    static int fibo(int n){
+        if(n<2){
+            return n;
         }
-        System.out.println(i);
+        return fibo(n-1)+ fibo(n-2);
     }
 }
